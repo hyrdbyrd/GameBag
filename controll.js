@@ -267,17 +267,6 @@ document.querySelectorAll('.tap').forEach(button => {
 
 var items = Array.prototype.slice.call(cubeDomElem.querySelectorAll('div'));
 
-// items.forEach(item => {
-// 	item.addEventListener('click', function(e) {
-// 		var target = e.target,
-// 			edgeName = target.className,
-// 			itemOnEdgePos = items.indexOf(target);
-		
-// 		methods[edgeName + 'LeftRotate']();
-// 	});
-// });
-
-
 var lastDown;
 
 cubeDomElem.ondragstart = function() {

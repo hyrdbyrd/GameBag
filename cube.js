@@ -1,6 +1,6 @@
 (function(global) {
 
-function getEdge(itemColor, rotateX, rotateY) {
+function getEdge(itemColor, rotateX, rotateY, rotateZ) {
 	var size = 60,
 		posX = -1 * size,
 		posY =  -1 * size,
@@ -16,7 +16,7 @@ function getEdge(itemColor, rotateX, rotateY) {
 			rotate : {
 				x : rotateX,
 				y : rotateY,
-				z : 0
+				z : rotateZ
 			},
 			color : itemColor,
 			scope : size
@@ -34,12 +34,12 @@ function getEdge(itemColor, rotateX, rotateY) {
 }
 
 global.cube = {
-	front  : getEdge('rgb(190, 12, 45)',   0,   0),
-	back   : getEdge('rgb(255, 146, 0)',   0, 180),
-	bot    : getEdge('rgb(235, 235, 235)', -90,   0),
-	top    : getEdge('rgb(244, 220, 16)',  90,   0),
-	left   : getEdge('rgb(50, 90, 190)',   0, -90),
-	right  : getEdge('#4CAF50', 0, 90)
+	front  : getEdge('rgb(190, 12, 45)',   0,   0, 0),
+	back   : getEdge('rgb(255, 146, 0)',   0, 180, 180),
+	bot    : getEdge('rgb(235, 235, 235)', -90,   0, 0),
+	top    : getEdge('rgb(244, 220, 16)',  90,   0, 0),
+	left   : getEdge('rgb(50, 90, 190)',   0, -90, 0),
+	right  : getEdge('#4CAF50', 0, 90, 0)
 };
 
 var environment = document.getElementsByClassName('environment')[0].style,
@@ -57,7 +57,8 @@ for(var i = 0; i < edges.length; i++) {
 		ctx.backgroundColor = edgeObj.color;
 
 		transform += 'rotateX(' + edgeObj.rotate.x + 'deg)';
-		transform += 'rotateY(' + edgeObj.rotate.y + 'deg)';  
+		transform += 'rotateY(' + edgeObj.rotate.y + 'deg)'; 
+		transform += 'rotateZ(' + edgeObj.rotate.z + 'deg)';  
 		transform += 'translateZ(' + edgeObj.pos.z + 'px)';
 		transform += 'translateX(' + edgeObj.pos.x + 'px)';
 		transform += 'translateY(' + edgeObj.pos.y + 'px)';	

@@ -17,11 +17,11 @@
   			grid-template-rows: 25% 100px auto;
 			border: 2px solid black;
 			color: black; 
-			width: 70px;
-			height: 70px;
+			width: 40px;
+			height: 40px;
 			background: #acac75;
 			text-align: center;
-			font-size: 50px;
+			font-size: 30px;
 		}
 
 		.controller {
@@ -37,7 +37,7 @@
 
 		.environment {
 			position: absolute;
-  			margin: 200px 200px;
+  			margin: 200px 175px;
   			perspective: 1000px;
   			perspective-origin: 50% 50%;
   			width: 100px;
@@ -57,57 +57,66 @@
 			position: fixed;
 		}
 
+		.game {
+			border: #dedede;
+			box-shadow: inset 0 0 80px #cacaca;
+			height: 500px;
+			width: 100ch;
+		}
+
 	</style>
 </head>
 <body>
-	<div class="environment">
-	  	<div id="cube">
-	  	</div>
-	</div>
-	<div class="controller">
-		<table>
-			<tr>
-			<td class="tap" data-click="middleFrontRightRotate">Сф</td>
-			<td class="tap" data-click="middleFrontLeftRotate">Сф`</td>
-			<td class="tap" data-click="middleTopRightRotate">Ст</td>
-			<td class="tap" data-click="middleTopLeftRotate">Ст`</td>
-			<td class="tap" data-click="middleLeftRightRotate">Сл`</td>
-			<td class="tap" data-click="middleLeftLeftRotate">Сл`</td>
-			</tr>
-			<tr>
-			<td class="tap" data-click="cubeRotate"><img src="img/2.png" width="70px" alt="rotate"></td>
-			<td class="tap" data-click="reload"><img src="img/1.png" width="70px" alt="reload"></td>
-			<td class="tap" data-click="topRightRotate">В</td>
-			<td class="tap" data-click="topLeftRotate">В`</td>
-			<td></td>
-			<td></td>
-			</tr>
-			<tr>
-			<td class="tap" data-click="leftRightRotate">Л</td>
-			<td class="tap" data-click="leftLeftRotate">Л`</td>
-			<td class="tap" data-click="frontRightRotate">Ф</td>
-			<td class="tap" data-click="frontLeftRotate">Ф`</td>
-			<td class="tap" data-click="rightRightRotate">П</td>
-			<td class="tap" data-click="rightLeftRotate">П`</td>
-			</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td class="tap" data-click="botRightRotate">Н</td>
-			<td class="tap" data-click="botLeftRotate">Н`</td>
-			<td></td>
-			<td></td>
-			</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td class="tap" data-click="backRightRotate">З</td>
-			<td class="tap" data-click="backLeftRotate">З`</td>
-			<td></td>
-			<td></td>
-			</tr>
-		</table>	
-	</div>
+	<section class="game">
+		<div class="environment">
+		  	<div id="cube">
+		  	</div>
+		</div>
+		<div class="controller">
+			<table>
+				<tr>
+				<td class="tap" data-click="middleFrontRightRotate">Сф</td>
+				<td class="tap" data-click="middleFrontLeftRotate">Сф`</td>
+				<td class="tap" data-click="middleTopRightRotate">Ст</td>
+				<td class="tap" data-click="middleTopLeftRotate">Ст`</td>
+				<td class="tap" data-click="middleLeftRightRotate">Сл`</td>
+				<td class="tap" data-click="middleLeftLeftRotate">Сл`</td>
+				</tr>
+				<tr>
+				<td class="tap" data-click="cubeRotate"><img src="img/2.png" width="40px" alt="rotate"></td>
+				<td class="tap" data-click="reload"><img src="img/1.png" width="40px" alt="reload"></td>
+				<td class="tap" data-click="topRightRotate">В</td>
+				<td class="tap" data-click="topLeftRotate">В`</td>
+				<td></td>
+				<td></td>
+				</tr>
+				<tr>
+				<td class="tap" data-click="leftRightRotate">Л</td>
+				<td class="tap" data-click="leftLeftRotate">Л`</td>
+				<td class="tap" data-click="frontRightRotate">Ф</td>
+				<td class="tap" data-click="frontLeftRotate">Ф`</td>
+				<td class="tap" data-click="rightRightRotate">П</td>
+				<td class="tap" data-click="rightLeftRotate">П`</td>
+				</tr>
+				<tr>
+				<td></td>
+				<td></td>
+				<td class="tap" data-click="botRightRotate">Н</td>
+				<td class="tap" data-click="botLeftRotate">Н`</td>
+				<td></td>
+				<td></td>
+				</tr>
+				<tr>
+				<td></td>
+				<td></td>
+				<td class="tap" data-click="backRightRotate">З</td>
+				<td class="tap" data-click="backLeftRotate">З`</td>
+				<td></td>
+				<td></td>
+				</tr>
+			</table>	
+		</div>
+	</section>
 	<script src="js/gen.js"></script>
 	<script src="js/cube.js"></script>
 	<script src="js/controll.js"></script>

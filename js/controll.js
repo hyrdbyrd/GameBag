@@ -153,8 +153,8 @@ var methods = {
 
 		for(let i = 0; i < 3; i++){
 			temp = colors.right[i];
-			colors.right[i] = colors.bot[i + 6];
-			colors.bot[i + 6] = colors.left[i];
+			colors.right[i] = colors.bot[8 - i];
+			colors.bot[8 - i] = colors.left[i];
 			colors.left[i] = colors.top[i];
 			colors.top[i] = temp;
 		}
@@ -242,7 +242,6 @@ function update(){
 			ctx.backgroundColor = edgeName[j];
 		}
 	}
-	animation();
 }
 
 document.querySelectorAll('.tap').forEach(button => {

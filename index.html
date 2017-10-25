@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doc</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+		body{
+			margin: 0;
+			background: #eaeaea;
+		}
+
+		.tap {
+			border-radius: 10%;
+			display: subgrid;
+			grid-template-columns: 40px 50px auto 50px 40px;
+  			grid-template-rows: 25% 100px auto;
+			border: 2px solid black;
+			color: black; 
+			width: 70px;
+			height: 70px;
+			background: #acac75;
+			text-align: center;
+			font-size: 50px;
+		}
+
+		.controller {
+			position: absolute;
+			margin: 100px 450px;
+		}
+
+		.tap:hover {
+			background: #dfdf98;
+			border: 2px solid #3939ba;
+			color: #3939ba;
+		}
+
+		.environment {
+			position: absolute;
+  			margin: 200px 200px;
+  			perspective: 1000px;
+  			perspective-origin: 50% 50%;
+  			width: 100px;
+  			height: 100px;
+		}
+
+		#cube {
+			transition: transform 1s ease-in-out;
+		 	transform-style: preserve-3d;
+		 	transform: rotateX(-36deg) rotateY(45deg) rotateZ(0deg);
+		}
+
+		#cube > div {
+			box-sizing: border-box;
+			perspective-origin: center;
+			transition: transform 0.5s ease-in;
+			position: fixed;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="environment">
+	  	<div id="cube">
+	  	</div>
+	</div>
+	<div class="controller">
+		<table>
+			<tr>
+			<td class="tap" data-click="middleFrontRightRotate">Сф</td>
+			<td class="tap" data-click="middleFrontLeftRotate">Сф`</td>
+			<td class="tap" data-click="middleTopRightRotate">Ст</td>
+			<td class="tap" data-click="middleTopLeftRotate">Ст`</td>
+			<td class="tap" data-click="middleLeftRightRotate">Сл`</td>
+			<td class="tap" data-click="middleLeftLeftRotate">Сл`</td>
+			</tr>
+			<tr>
+			<td class="tap" data-click="cubeRotate"><img src="img/2.png" width="70px" alt="rotate"></td>
+			<td class="tap" data-click="reload"><img src="img/1.png" width="70px" alt="reload"></td>
+			<td class="tap" data-click="topRightRotate">В</td>
+			<td class="tap" data-click="topLeftRotate">В`</td>
+			<td></td>
+			<td></td>
+			</tr>
+			<tr>
+			<td class="tap" data-click="leftRightRotate">Л</td>
+			<td class="tap" data-click="leftLeftRotate">Л`</td>
+			<td class="tap" data-click="frontRightRotate">Ф</td>
+			<td class="tap" data-click="frontLeftRotate">Ф`</td>
+			<td class="tap" data-click="rightRightRotate">П</td>
+			<td class="tap" data-click="rightLeftRotate">П`</td>
+			</tr>
+			<tr>
+			<td></td>
+			<td></td>
+			<td class="tap" data-click="botRightRotate">Н</td>
+			<td class="tap" data-click="botLeftRotate">Н`</td>
+			<td></td>
+			<td></td>
+			</tr>
+			<tr>
+			<td></td>
+			<td></td>
+			<td class="tap" data-click="backRightRotate">З</td>
+			<td class="tap" data-click="backLeftRotate">З`</td>
+			<td></td>
+			<td></td>
+			</tr>
+		</table>	
+	</div>
+	<script src="js/gen.js"></script>
+	<script src="js/cube.js"></script>
+	<script src="js/controll.js"></script>
+</body>
+</html>

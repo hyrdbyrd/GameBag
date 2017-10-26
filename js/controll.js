@@ -171,10 +171,8 @@ var methods = {
 	rotateAll: function(e){
 		var downInterval,
 			lastDown = 0;
-
 		cubeDomElem.addEventListener('mousedown', function(e){
 			onDown = e;
-			e.stopImmediatePropagation();
 		});
 
 		cubeDomElem.addEventListener('mouseup', function(e) {	
@@ -182,7 +180,6 @@ var methods = {
 				xDir = e.x - onDown.x,
 				yDir = e.y - onDown.y;
 			cubeDomElem.style.transform = 'rotateX(' + yDir + 'deg) rotateY(' + xDir + 'deg)';
-			e.stopImmediatePropagation();
 		});	
 	},
 

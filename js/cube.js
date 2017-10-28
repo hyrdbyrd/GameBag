@@ -1,7 +1,7 @@
 (function(global) {
 
 function getEdge(itemColor, rotateX, rotateY, rotateZ) {
-	var size = 60,
+	var size = 70,
 		posX = -1 * size,
 		posY =  -1 * size,
 		items = [];

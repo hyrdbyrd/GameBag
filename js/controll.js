@@ -270,4 +270,21 @@ cubeDomElem.addEventListener('mouseup', function(e) {
 	lastDown = null;
 });
 
+cubeDomElem.addEventListener('touchstart', function(e) {
+	lastDown = e;
+});
+
+cubeDomElem.addEventListener('touchend', function(e) {	
+	if (!lastDown) return;
+	var target = lastDown.target,
+		edgeName = target.className,
+		itemOnEdgePos = items.indexOf(target),
+		horDir = e.x - lastDown.x > 0 ? 'Right' : 'Left',
+		verDir = e.y - lastDown.y > 0 ? 'Down' : 'Top';
+
+	methods[edgeName + horDir + 'Rotate']();
+
+	lastDown = null;
+});
+
 })(cube);

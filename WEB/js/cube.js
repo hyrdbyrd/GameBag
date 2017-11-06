@@ -39,7 +39,7 @@ global.cube = {
 	bot    : getEdge('rgb(235, 235, 235)', -90,   0, 0),
 	top    : getEdge('rgb(244, 220, 16)',  90,   0, 0),
 	left   : getEdge('rgb(50, 90, 190)',   0, -90, -90),
-	right  : getEdge('#4CAF50', 0, 90, 90)
+	right  : getEdge('rgb(98, 197, 64)', 0, 90, 90)
 };
 
 var environment = document.getElementsByClassName('environment')[0].style,

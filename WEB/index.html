@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CubeRube</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<header class="container info">
+		<div class="LOGO">G</div>
+		<div class="blueDot dot"></div>
+		<div class="berryDot dot"></div>
+	</header>
+	<section class="container game">
+		<div class="option">
+			<div class="patterns">
+				<table class="typeColor" typeColor="0">
+					<tr>
+						<td colspan="3" style="font-size: 40px;">Стандарт</td>
+					</tr>
+					<tr>
+						<td style="background: rgb(190, 12, 45);" class="default"></td>
+						<td style="background: rgb(244, 220, 16);" class="default"></td>
+						<td style="background: rgb(50, 90, 190);" class="default"></td>
+					</tr>
+					<tr>
+						<td style="background: rgb(255, 146, 0);" class="default"></td>
+						<td style="background: rgb(235, 235, 235);" class="default"></td>
+						<td style="background: rgb(98, 197, 64);" class="default"></td>
+					</tr>
+				</table>
+				<table class="typeColor" typeColor="1">
+					<tr>
+						<td colspan="3" style="font-size: 40px;">Резкость</td>
+					</tr>
+					<tr>
+						<td style="background: rgb(180, 15, 15);" class="sharp"></td>
+						<td style="background: rgb(255, 255, 15);" class="sharp"></td>
+						<td style="background: rgb(15, 15, 180);" class="sharp"></td>
+					</tr>
+					<tr>
+						<td style="background: rgb(255, 120, 0);" class="sharp"></td>
+						<td style="background: rgb(240, 240, 240);" class="sharp"></td>
+						<td style="background: rgb(0, 235, 0);" class="sharp"></td>
+					</tr>
+				</table>
+				<table class="typeColor" typeColor="2">
+					<tr>
+						<td colspan="3" style="font-size: 40px;">Мягкость</td>
+					</tr>
+					<tr>
+						<td style="background: rgb(255, 95, 95);" class="soft"></td>
+						<td style="background: rgb(255, 255, 95);" class="soft"></td>
+						<td style="background: rgb(95, 95, 255);" class="soft"></td>
+					</tr>
+					<tr>
+						<td style="background: rgb(255, 160, 95);" class="soft"></td>
+						<td style="background: rgb(255, 255, 255);" class="soft"></td>
+						<td style="background: rgb(95, 255, 95);" class="soft"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="environment">
+		  	<div id="cube">
+		  	</div>
+		</div>
+		<div class="controller">
+			<table cellspacing="10">
+				<tr>
+					<td class="tap" data-click="middleFrontRightRotate">Сф</td>
+					<td class="tap" data-click="middleFrontLeftRotate">Сф`</td>
+					<td class="tap" data-click="middleTopRightRotate">Ст</td>
+					<td class="tap" data-click="middleTopLeftRotate">Ст`</td>
+					<td class="tap" data-click="middleLeftRightRotate">Сл</td>
+					<td class="tap" data-click="middleLeftLeftRotate">Сл`</td>
+				</tr>
+				<tr>
+					<td class="tap" data-click="cubeRotate"><img src="img/2.png" width="40px" alt="Rotate Cube"></td>
+					<td class="tap" data-click="reload"><img src="img/1.png" width="40px" alt="Reload"></td>
+					<td class="tap" data-click="topRightRotate">В</td>
+					<td class="tap" data-click="topLeftRotate">В`</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="tap" data-click="leftRightRotate">Л</td>
+					<td class="tap" data-click="leftLeftRotate">Л`</td>
+					<td class="tap" data-click="frontRightRotate">Ф</td>
+					<td class="tap" data-click="frontLeftRotate">Ф`</td>
+					<td class="tap" data-click="rightRightRotate">П</td>
+					<td class="tap" data-click="rightLeftRotate">П`</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td class="tap" data-click="botRightRotate">Н</td>
+					<td class="tap" data-click="botLeftRotate">Н`</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td class="tap" data-click="backRightRotate">З</td>
+					<td class="tap" data-click="backLeftRotate">З`</td>
+					<td></td>
+					<td class="tap">S</td>
+				</tr>
+			</table>	
+		</div>
+	</section>
+	<footer>
+	</footer>
+	<script src="js/gen.js"></script>
+	<script src="js/cube.js"></script>
+	<script src="js/controll.js"></script>
+</body>
+</html>

@@ -184,8 +184,15 @@ var methods = {
 	},
 
 	middleTopRightRotate: function(){
-		methods.topRightRotate();
-		methods.botLeftRotate();
+		for(let i = 0; i < 3; i++){
+			temp = colors.right[1 + i*3];
+			colors.right[1 + i*3] = colors.back[i + 3];
+			colors.back[i + 3] = colors.left[1 + i*3];
+			colors.left[1 + i*3] = colors.front[i + 3];
+			colors.front[i + 3] = temp;
+		}
+
+		update();
 	},
 
 	middleTopLeftRotate: function(){
@@ -195,8 +202,15 @@ var methods = {
 	},
 
 	middleLeftRightRotate: function(){
-		methods.leftLeftRotate();
-		methods.rightRightRotate();
+		for(let i = 0; i < 3; i++){
+			temp = colors.front[1 + i*3];
+			colors.front[1 + i*3] = colors.top[1 + i*3];
+			colors.top[1 + i*3] = colors.back[1 + i*3];
+			colors.back[1 + i*3] = colors.bot[1 + i*3];
+			colors.bot[1 + i*3] = temp;
+		}
+
+		update();
 	},
 
 	middleLeftLeftRotate: function(){
@@ -206,8 +220,15 @@ var methods = {
 	},
 
 	middleFrontRightRotate: function(){
-		methods.frontLeftRotate();
-		methods.backRightRotate();
+		for(let i = 0; i < 3; i++){
+			temp = colors.top[i + 3];
+			colors.top[i + 3] = colors.left[i + 3];
+			colors.left[i + 3] = colors.bot[i + 3];
+			colors.bot[i + 3] = colors.right[i + 3];
+			colors.right[i + 3] = temp;
+		}
+
+		update();
 	},
 
 	middleFrontLeftRotate: function(){
@@ -217,6 +238,13 @@ var methods = {
 	},
 
 	reload: function(){
+		colors.front[4]  = 'rgb(190, 12, 45)';
+		colors.back[4] = 'rgb(255, 146, 0)';
+		colors.bot[4] = 'rgb(235, 235, 235)';
+		colors.top[4] = 'rgb(244, 220, 16)';
+		colors.left[4] = 'rgb(50, 90, 190)';
+		colors.right[4] = '#4CAF50';
+
 		for(key in colors){
 			colors[key].forEach((item, i, arr) => {
 				arr[i] = arr[4];
@@ -259,14 +287,8 @@ cubeDomElem.addEventListener('mousedown', function(e) {
 
 cubeDomElem.addEventListener('mouseup', function(e) {	
 	if (!lastDown) return;
-	var target = lastDown.target,
-		edgeName = target.className,
-		itemOnEdgePos = items.indexOf(target),
-		horDir = e.x - lastDown.x > 0 ? 'Right' : 'Left',
-		verDir = e.y - lastDown.y > 0 ? 'Down' : 'Top';
-
-	methods[edgeName + horDir + 'Rotate']();
-
+	cubeDomElem.style.transform += 'rotateY(' + (e.x - lastDown.x) + 'deg)';
+	cubeDomElem.style.transform += 'rotateX(' + (-(e.y - lastDown.y)) + 'deg)';
 	lastDown = null;
 });
 
@@ -276,14 +298,8 @@ cubeDomElem.addEventListener('touchstart', function(e) {
 
 cubeDomElem.addEventListener('touchend', function(e) {	
 	if (!lastDown) return;
-	var target = lastDown.target,
-		edgeName = target.className,
-		itemOnEdgePos = items.indexOf(target),
-		horDir = e.x - lastDown.x > 0 ? 'Right' : 'Left',
-		verDir = e.y - lastDown.y > 0 ? 'Down' : 'Top';
-
-	methods[edgeName + horDir + 'Rotate']();
-
+	cubeDomElem.style.transform += 'rotateY(' + (e.x - lastDown.x) + 'deg)';
+	cubeDomElem.style.transform += 'rotateX(' + (-(e.y - lastDown.y)) + 'deg)';
 	lastDown = null;
 });
 

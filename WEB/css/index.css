@@ -100,6 +100,11 @@ body {
 	line-height: 240px;
 }
 
+a {
+	color: #010101;
+	text-decoration: none;
+}
+
 .LOGO:hover {
 	cursor: pointer;
 	box-shadow: 0 0 100px #531212;

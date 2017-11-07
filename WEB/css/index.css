@@ -3,7 +3,7 @@ body {
 	background: #eaeaea;
 	box-shadow: inset 0 0 80px #cacaca;
 	font-family: arial;
-	height: 2500px;
+	height: 100%;
 }
 
 .container {
@@ -131,6 +131,15 @@ body {
 	height: 300px;
 }
 
+.emblem {
+	line-height: 150px;
+	margin-right: 10px;
+	font-weight: bolder;
+	font-size: 100px;
+	float: left;
+	box-shadow: 2px 3px 5px #121212;
+}
+
 footer {
 	height: 100px;
 	width: 100%;
@@ -138,5 +147,4 @@ footer {
 	box-shadow: inset 2px 2px 100px #121212;
 	margin: 0 0;
 	border-top: 10px solid #121212;
-
 }

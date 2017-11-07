@@ -8,35 +8,36 @@ body {
 
 .line {
 	width: 40px;
-	border-radius: 25%;
+	border-radius: 20%;
 	height: 7px;
 	background: #a00b4d;
-	margin-top: 6px;
+	margin-top: 4px;
 	box-shadow: 1px 1px 4px #121212;
 }
 
-.menu_unvisible {
-    margin-left: -470px;
+.menu {
+	position: absolute;
+	margin-top: 40px;
+	margin-left: 5%;
 }
 
 .menu {
 	color: #a00b4d;
-	background: #efefef;
 	font-weight: bolder;
 	font-size: 30px;
 	line-height: 40px;
 	padding-top: 100px;
-	padding-left: 60px;
-	width: 400px;
-	height: 100vh;
-	z-index: 50px;
-	overflow: hidden;
-	border-right: 10px solid #121212;
+	transition: transform 1s ease-in-out;
 }
 
-#menu-toggle {
+#menu {
+	width: 300px;
+	height: 100vh;
+	background: #efefef;
 	padding: 40px;
-	position: absolute;
+	z-index: 50px;
+	overflow: hidden;
+	border-right: 10px solid #121212
 }
 
 .container {
@@ -53,6 +54,34 @@ body {
 .box {
 	width: 90%;
 	margin: 20px auto;
+}
+
+.game {
+	height: 1020px;
+}
+
+.environment {
+	margin: 100px 0;
+	padding: 50px;
+	padding-left: 150px;
+	height: 200px;
+	width: 200px;
+}
+
+#cube {
+	position: absolute;
+	transition: transform 1s ease-in-out;
+ 	transform-style: preserve-3d;
+	perspective-origin: 0 0;
+ 	transform: rotateX(-36deg) rotateY(45deg) rotateZ(0deg);
+}
+
+#cube > div {
+	box-sizing: border-box;
+	perspective-origin: 0 0;
+	width: 0;
+	height: 0;
+	position: fixed;
 }
 
 .tap {
@@ -74,6 +103,11 @@ body {
 
 .tap:active {
 	background: #fefefe;
+}
+
+.controller {
+	flex-grow: 0;
+	padding: 80px;
 }
 
 .info {
@@ -118,6 +152,23 @@ a {
 	margin: 20px auto;
 	padding: 10px;
 	float: left;
+}
+
+.patterns > table:hover {
+	background: #eaeaae;
+	cursor: pointer;
+}
+
+.patterns td {
+	padding: 10px;
+	border: 1px solid #ababab;
+	height: 10px;
+	background: #fff;
+	height: 40px;
+}
+
+.option {
+	height: 300px;
 }
 
 .emblem {

@@ -185,9 +185,9 @@ var methods = {
 
 	middleTopRightRotate: function(){
 		for(let i = 0; i < 3; i++){
-			temp = colors.right[1 + i*3];
-			colors.right[1 + i*3] = colors.back[i + 3];
-			colors.back[i + 3] = colors.left[1 + i*3];
+			temp = colors.right[7 - i*3];
+			colors.right[7 - i*3] = colors.back[5 - i];
+			colors.back[5 - i] = colors.left[1 + i*3];
 			colors.left[1 + i*3] = colors.front[i + 3];
 			colors.front[i + 3] = temp;
 		}
@@ -223,8 +223,8 @@ var methods = {
 		for(let i = 0; i < 3; i++){
 			temp = colors.top[i + 3];
 			colors.top[i + 3] = colors.left[i + 3];
-			colors.left[i + 3] = colors.bot[i + 3];
-			colors.bot[i + 3] = colors.right[i + 3];
+			colors.left[i + 3] = colors.bot[5 - i];
+			colors.bot[5 - i] = colors.right[i + 3];
 			colors.right[i + 3] = temp;
 		}
 

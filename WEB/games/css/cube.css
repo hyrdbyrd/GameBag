@@ -1,0 +1,88 @@
+.box {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.environment {
+	margin: 100px 0;
+	padding: 50px;
+	padding-left: 150px;
+	height: 200px;
+	width: 200px;
+}
+
+#cube {
+	position: absolute;
+	transition: transform 1s ease-in-out;
+ 	transform-style: preserve-3d;
+	perspective-origin: 0 0;
+ 	transform: rotateX(-36deg) rotateY(45deg) rotateZ(0deg);
+}
+
+#cube > div {
+	box-sizing: border-box;
+	perspective-origin: 0 0;
+	width: 0;
+	height: 0;
+	position: fixed;
+}
+
+.tap {
+	border-radius: 10%;
+	color: black; 
+	width: 50px;
+	height: 50px;
+	background: #c9c9c9;
+	text-align: center;
+	font-size: 30px;
+}
+
+.tap:hover {
+	background: #ffb;
+	color: #3939ba;
+	cursor: pointer;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+}
+
+.tap:active {
+	background: #fefefe;
+}
+
+.controller {
+	flex-grow: 0;
+	padding: 80px;
+}
+
+.patterns > table {
+	text-align: center;
+	margin: 10px auto;
+	height: 60px;
+}
+
+.patterns > table:hover {
+	background: #eaeaae;
+	cursor: pointer;
+}
+
+.patterns td {
+	border: 1px solid #ababab;
+	background: #fff;
+}
+
+.option {
+	height: 300px;
+}
+
+.emblem {
+	line-height: 150px;
+	margin-right: 10px;
+	font-weight: bolder;
+	font-size: 100px;
+	float: left;
+	box-shadow: 2px 3px 5px #121212;
+}
+
+#super {
+	background: #fe1212;
+	color: #fefefe;
+}

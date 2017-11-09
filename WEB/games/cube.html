@@ -1,67 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CubeRube</title>
+	<title>Game Bag - Cube Rube</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/cube.css">
+	<link rel="stylesheet" type="text/css" href="css/cube.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
 </head>
 <body>
 	<header class="container info">
-		<div class="LOGO"><a href="../index.html">G</a></div>
-		<div class="blueDot dot"></div>
-		<div class="berryDot dot"></div>
-	</header>
-	<section class="container game">
-		<div class="option">
-			<div class="patterns">
-				<table class="typeColor" typeColor="0">
-					<tr>
-						<td colspan="3" style="font-size: 40px;">Стандарт</td>
-					</tr>
-					<tr>
-						<td style="background: rgb(190, 12, 45);" class="default"></td>
-						<td style="background: rgb(244, 220, 16);" class="default"></td>
-						<td style="background: rgb(50, 90, 190);" class="default"></td>
-					</tr>
-					<tr>
-						<td style="background: rgb(255, 146, 0);" class="default"></td>
-						<td style="background: rgb(235, 235, 235);" class="default"></td>
-						<td style="background: rgb(98, 197, 64);" class="default"></td>
-					</tr>
-				</table>
-				<table class="typeColor" typeColor="1">
-					<tr>
-						<td colspan="3" style="font-size: 40px;">Резкость</td>
-					</tr>
-					<tr>
-						<td style="background: rgb(180, 15, 15);" class="sharp"></td>
-						<td style="background: rgb(255, 255, 15);" class="sharp"></td>
-						<td style="background: rgb(15, 15, 180);" class="sharp"></td>
-					</tr>
-					<tr>
-						<td style="background: rgb(255, 120, 0);" class="sharp"></td>
-						<td style="background: rgb(240, 240, 240);" class="sharp"></td>
-						<td style="background: rgb(0, 235, 0);" class="sharp"></td>
-					</tr>
-				</table>
-				<table class="typeColor" typeColor="2">
-					<tr>
-						<td colspan="3" style="font-size: 40px;">Мягкость</td>
-					</tr>
-					<tr>
-						<td style="background: rgb(255, 95, 95);" class="soft"></td>
-						<td style="background: rgb(255, 255, 95);" class="soft"></td>
-						<td style="background: rgb(95, 95, 255);" class="soft"></td>
-					</tr>
-					<tr>
-						<td style="background: rgb(255, 160, 95);" class="soft"></td>
-						<td style="background: rgb(255, 255, 255);" class="soft"></td>
-						<td style="background: rgb(95, 255, 95);" class="soft"></td>
-					</tr>
-				</table>
-			</div>
+		<div class="menu menu_unvisible" id="menu">
+			<nav>
+				<br>
+				<div>
+					Игры
+					<li>
+						<a href="games/cube.html" style="color: #a00b4d; text-decoration: underline;">Кубик-Рубика</a>
+					</li>
+				</div>
+				<div>
+					Практика
+					<li>
+						Введение
+					</li>
+					<li>
+						Теория
+					</li>
+					<li>
+						Реализация
+					</li>
+				</div>
+			</nav>
 		</div>
+		<div id="menu-toggle">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+		</div>
+		<div class="LOGO"><a href="../index.html">G</a></div>
+	</header>
+	<section class="box">
+		<h1>Управление</h1>
+		<p>Т.к. в кубике-рубика при сборке кубика есть некоторые формулы, то и мы будем говорить не языке формул:</p>
+		
+	</section>
+	<section class="container">
 		<div class="environment">
 		  	<div id="cube">
 		  	</div>
@@ -106,15 +89,50 @@
 					<td class="tap" data-click="backRightRotate">З</td>
 					<td class="tap" data-click="backLeftRotate">З`</td>
 					<td></td>
-					<td class="tap">S</td>
+					<td class="tap" data-click="super" id="super">S</td>
 				</tr>
 			</table>	
 		</div>
 	</section>
+	<div class="option box">
+			<div class="patterns">
+				<table class="typeColor" typeColor="0">
+					<tr>
+						<td style="background: rgb(190, 12, 45);" class="default"></td>
+						<td style="background: rgb(244, 220, 16);" class="default"></td>
+						<td style="background: rgb(50, 90, 190);" class="default"></td>
+						<td style="background: rgb(255, 146, 0);" class="default"></td>
+						<td style="background: rgb(235, 235, 235);" class="default"></td>
+						<td style="background: rgb(98, 197, 64);" class="default"></td>
+					</tr>
+				</table>
+				<table class="typeColor" typeColor="1">
+					<tr>
+						<td style="background: rgb(180, 15, 15);" class="sharp"></td>
+						<td style="background: rgb(255, 255, 15);" class="sharp"></td>
+						<td style="background: rgb(15, 15, 180);" class="sharp"></td>
+						<td style="background: rgb(255, 120, 0);" class="sharp"></td>
+						<td style="background: rgb(240, 240, 240);" class="sharp"></td>
+						<td style="background: rgb(0, 235, 0);" class="sharp"></td>
+					</tr>
+				</table>
+				<table class="typeColor" typeColor="2">
+					<tr>
+						<td style="background: rgb(255, 95, 95);" class="soft"></td>
+						<td style="background: rgb(255, 255, 95);" class="soft"></td>
+						<td style="background: rgb(95, 95, 255);" class="soft"></td>
+						<td style="background: rgb(255, 160, 95);" class="soft"></td>
+						<td style="background: rgb(255, 255, 255);" class="soft"></td>
+						<td style="background: rgb(95, 255, 95);" class="soft"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
 	<footer>
 	</footer>
 	<script src="../js/gen.js"></script>
 	<script src="../js/cube.js"></script>
 	<script src="../js/controll.js"></script>
+	<script src="../js/nav.js"></script>
 </body>
 </html>

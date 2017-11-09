@@ -251,11 +251,23 @@ var methods = {
 			});
 		}
 		update();
+	},
+
+	super : function(){
+		var active = document.getElementById('super');
+		if(supFlag) {
+			active.style.background = '#1212be';
+		} else {
+			active.style.background = '#fe1212';
+		}
+
+		supFlag = !supFlag;
 	}
 }
 
 
 var edges = colorNames.map(color => colors[color]);
+var supFlag = true;
 
 function update(){
 	for (var i = 0; i < edges.length; i++) {
@@ -286,10 +298,20 @@ cubeDomElem.addEventListener('mousedown', function(e) {
 });
 
 cubeDomElem.addEventListener('mouseup', function(e) {	
-	if (!lastDown) return;
-	cubeDomElem.style.transform += 'rotateY(' + (e.x - lastDown.x) + 'deg)';
-	cubeDomElem.style.transform += 'rotateX(' + (-(e.y - lastDown.y)) + 'deg)';
-	lastDown = null;
+	if(supFlag){
+		if (!lastDown) return;
+		cubeDomElem.style.transform += 'rotateY(' + (e.x - lastDown.x) + 'deg)';
+		cubeDomElem.style.transform += 'rotateX(' + (-(e.y - lastDown.y)) + 'deg)';
+		lastDown = null;
+	} else {
+		var target = lastDown.target,
+		edgeName = target.className,
+		itemOnEdgePos = items.indexOf(target),
+		horDir = e.x - lastDown.x > 0 ? 'Right' : 'Left',
+		verDir = e.y - lastDown.y > 0 ? 'Down' : 'Top';
+		methods[edgeName + horDir + 'Rotate']();
+		lastDown = null;
+	}
 });
 
 cubeDomElem.addEventListener('touchstart', function(e) {

@@ -4,6 +4,7 @@ body {
 	box-shadow: inset 0 0 80px #cacaca;
 	font-family: arial;
 	height: 100%;
+	height: 2000px;
 }
 
 .line {
@@ -100,9 +101,9 @@ body {
 	line-height: 240px;
 }
 
-a {
-	color: #010101;
+.LOGO a {
 	text-decoration: none;
+	color: #010101;
 }
 
 .LOGO:hover {
@@ -132,6 +133,7 @@ footer {
 	width: 100%;
 	height: 100px;
 	width: 100%;
+	position: relative;
 	background-image: linear-gradient(30deg, #531212, #010151, #531212);
 	box-shadow: inset 2px 2px 100px #121212;
 	border-top: 10px solid #121212;
